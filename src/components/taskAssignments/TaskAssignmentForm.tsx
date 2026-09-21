@@ -52,7 +52,7 @@ const TaskAssignmentForm = ({
   assignment,
   projects,
   onSuccess,
-  onCancel,
+ 
 }: TaskAssignmentFormProps) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loadingEmployees, setLoadingEmployees] = useState(true);

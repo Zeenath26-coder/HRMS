@@ -5,8 +5,7 @@ import {
   Box,
   Button,
   CircularProgress,
-  MenuItem,
-  TextField,
+
   Typography,
 } from "@mui/material";
 
@@ -52,7 +51,7 @@ const ProjectForm = ({
   project,
   employees,
   onSuccess,
-  onCancel,
+
 }: ProjectFormProps) => {
   const isEditMode = !!project;
 

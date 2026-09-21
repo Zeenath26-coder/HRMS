@@ -4,7 +4,7 @@ import {
   Box,
   Button,
   CircularProgress,
-  Typography,
+  
 } from "@mui/material";
 import {
   Edit02Icon,
@@ -47,7 +47,7 @@ const TaskForm = ({
   projects,
   employees,
   onSuccess,
-  onCancel,
+ 
 }: TaskFormProps) => {
   const isEditMode = Boolean(task);
 

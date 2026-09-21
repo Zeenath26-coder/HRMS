@@ -26,8 +26,7 @@ import {
   type Path,
 } from "react-hook-form";
 
-import { COLORS, RADIUS, TYPOGRAPHY } from "../../theme/designToken";
-
+import { COLORS, TYPOGRAPHY } from "../../theme/designToken";
 interface SelectOption {
   value: string | number;
   label: string;

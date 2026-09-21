@@ -44,7 +44,7 @@ const emptyValues: JobFormData = {
   maxSalary: 0,
 };
 
-const JobForm = ({ job, onSuccess, onCancel }: JobFormProps) => {
+const JobForm = ({ job, onSuccess }: JobFormProps) => {
   const isEditMode = !!job;
 
   const [serverError, setServerError] = useState("");

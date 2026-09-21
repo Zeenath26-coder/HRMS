@@ -4,9 +4,9 @@ import { Box } from "@mui/material";
 import { toast } from "sonner";
 
 import type { TaskAssignment } from "../../types/taskAssignment";
-import type { TaskStatus } from "../../types/task";
+
 import { useNavigate } from "react-router-dom";
-import { getMyTasks, updateTaskStatus } from "../../api/taskAssignmentApi";
+import { getMyTasks } from "../../api/taskAssignmentApi";
 
 import MyTaskTable from "../../components/myTasks/MyTaskTable";
 import UpdateTaskStatusDialog from "../../components/taskAssignments/UpdateTaskStatusDialog";
@@ -30,8 +30,6 @@ const MyTasks = () => {
 
   const [selectedAssignment, setSelectedAssignment] =
     useState<TaskAssignment | null>(null);
-
-  const [updatingStatus, setUpdatingStatus] = useState(false);
 
   const loadMyTasks = async () => {
     try {
@@ -77,10 +75,6 @@ const MyTasks = () => {
   };
 
   const handleCloseStatusDialog = () => {
-    if (updatingStatus) {
-      return;
-    }
-
     setStatusDialogOpen(false);
     setSelectedAssignment(null);
   };
@@ -102,8 +96,6 @@ const MyTasks = () => {
         fontFamily: "Poppins, sans-serif",
       }}
     >
-      
-
       <Box
         sx={{
           display: "flex",
@@ -122,8 +114,6 @@ const MyTasks = () => {
         />
       </Box>
 
-    
-
       <DataTableCard
         loading={loading}
         error={error}
@@ -137,12 +127,9 @@ const MyTasks = () => {
         />
       </DataTableCard>
 
-    
-
       <UpdateTaskStatusDialog
         open={statusDialogOpen}
         assignment={selectedAssignment}
-        loading={updatingStatus}
         onClose={handleCloseStatusDialog}
         onSuccess={handleStatusSuccess}
       />

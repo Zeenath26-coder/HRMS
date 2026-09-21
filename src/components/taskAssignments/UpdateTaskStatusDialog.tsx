@@ -32,7 +32,7 @@ import { useForm } from "react-hook-form";
 interface UpdateTaskStatusDialogProps {
   open: boolean;
   assignment: TaskAssignment | null;
-  loading: boolean;
+  
   onClose: () => void;
   onSuccess: (status: TaskStatus) => void | Promise<void>;
 }

@@ -350,7 +350,7 @@ const MyTaskDetails = () => {
       <UpdateTaskStatusDialog
         open={statusDialogOpen}
         assignment={assignment}
-        loading={false}
+        
         onClose={handleCloseStatusDialog}
         onSuccess={handleStatusSuccess}
       />

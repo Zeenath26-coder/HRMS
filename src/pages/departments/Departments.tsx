@@ -4,27 +4,20 @@ import axios from "axios";
 import {
   Alert,
   Box,
-  Button,
+  
   CircularProgress,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  InputAdornment,
+ 
   Pagination,
   Paper,
-  TextField,
+  
   Typography,
-  MenuItem,
+ 
 } from "@mui/material";
 
 import {
   Add01Icon,
-  Cancel01Icon,
-  Search01Icon,
+  
 } from "@hugeicons/core-free-icons";
-
-import { HugeiconsIcon } from "@hugeicons/react";
 
 import { toast } from "sonner";
 
@@ -41,12 +34,12 @@ import DepartmentTable from "../../components/departments/DepartmentTable";
 import DepartmentForm from "../../components/departments/DepartmentForm";
 
 import ConfirmDialog from "../../components/common/ConfirmDialog";
-import FilterBar from "../../components/common/FilterBar";
+
 
 import { COLORS } from "../../theme/designToken";
 
 import { useBounce } from "../../hooks/useDebounce";
-import FilterSelect from "../../components/common/FilterSelect";
+
 import FormDialog from "../../components/common/FormDialog";
 import PageActionButton from "../../components/common/PageActionButton";
 import SearchField from "../../components/common/SearchField";
@@ -133,10 +126,7 @@ const Departments = () => {
     loadManagers();
   }, []);
 
-  const handleClearSearch = () => {
-    setSearchInput("");
-    setPage(0);
-  };
+ 
 
   const handleClearFilters = () => {
     setManagerFilter("ALL");

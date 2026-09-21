@@ -13,7 +13,7 @@ import {
   ViewIcon,
   Edit02Icon,
   Delete02Icon,
-  ArrowDataTransferHorizontalIcon,
+  
 } from "@hugeicons/core-free-icons";
 
 import { useNavigate } from "react-router-dom";

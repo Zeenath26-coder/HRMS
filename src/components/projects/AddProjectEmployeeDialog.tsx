@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 import {
-  Search01Icon,
+
   UserAdd01Icon,
   Cancel01Icon,
 } from "@hugeicons/core-free-icons";

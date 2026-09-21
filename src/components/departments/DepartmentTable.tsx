@@ -14,13 +14,13 @@ import { ViewIcon, Edit02Icon, Delete02Icon } from "@hugeicons/core-free-icons";
 
 import type { Department } from "../../types/department";
 import TableActionMenu from "../common/TableActionMenu";
-import { useNavigate } from "react-router-dom";
+
 import {
   tableHeaderRowSx,
   tableRowSx,
   tablePrimaryTextSx,
   tableSecondaryTextSx,
-  tableCellTextSx,
+
   tableAvatarSx,
   tableSmallTextSx,
 } from "../common/tableStyles";

@@ -6,8 +6,8 @@ import { toast } from "sonner";
 
 import {
   getTaskAssignments,
-  updateTaskStatus,
-  updateTaskAssignment,
+ 
+ 
   deleteTaskAssignment,
 } from "../../api/taskAssignmentApi";
 
@@ -20,7 +20,6 @@ import type { PageResponse } from "../../types/common";
 
 import TaskAssignmentTable from "../../components/taskAssignments/TaskAssignmentTable";
 import TaskAssignmentFilters from "../../components/taskAssignments/TaskAssignmentFilter";
-import UpdateTaskStatusDialog from "../../components/taskAssignments/UpdateTaskStatusDialog";
 
 import SearchField from "../../components/common/SearchField";
 import TablePagination from "../../components/common/TablePagination";
@@ -30,8 +29,8 @@ import { useBounce } from "../../hooks/useDebounce";
 import ConfirmDialog from "../../components/common/ConfirmDialog";
 import FormDialog from "../../components/common/FormDialog";
 import TaskAssignmentForm from "../../components/taskAssignments/TaskAssignmentForm";
-import { getTasks } from "../../api/taskApi";
-import type { Task } from "../../types/task";
+
+
 
 import type { Project } from "../../types/project";
 import { getProjects } from "../../api/projectApi";
@@ -42,7 +41,7 @@ const TaskAssignments = () => {
   const [assignments, setAssignments] = useState<TaskAssignment[]>([]);
 
   const [employees, setEmployees] = useState<Employee[]>([]);
-  const [tasks, setTasks] = useState<Task[]>([]);
+
   const [projects, setProjects] = useState<Project[]>([]);
 
 
@@ -72,12 +71,12 @@ const TaskAssignments = () => {
 
   const [totalElements, setTotalElements] = useState(0);
 
-  const [statusDialogOpen, setStatusDialogOpen] = useState(false);
+ 
 
   const [selectedAssignment, setSelectedAssignment] =
     useState<TaskAssignment | null>(null);
 
-  const [updatingStatus, setUpdatingStatus] = useState(false);
+  
 
   const handleEdit = (assignment: TaskAssignment) => {
     setSelectedAssignment(assignment);
@@ -197,14 +196,7 @@ const TaskAssignments = () => {
     }
   };
 
-  const loadTasks = async () => {
-    try {
-      const data = await getTasks();
-      setTasks(data);
-    } catch (error) {
-      console.error("Failed to load tasks:", error);
-    }
-  };
+ 
 
   const loadProjects = async () => {
   try {
@@ -217,7 +209,7 @@ const TaskAssignments = () => {
 
   useEffect(() => {
     loadEmployees();
-    loadTasks();
+    
     loadProjects();
   }, []);
 
@@ -265,52 +257,11 @@ const TaskAssignments = () => {
     setPage(0);
   };
 
-  const handleChangeStatus = (assignment: TaskAssignment) => {
-    setSelectedAssignment(assignment);
+  
 
-    setStatusDialogOpen(true);
-  };
+  
 
-  const handleCloseStatusDialog = () => {
-    if (updatingStatus) {
-      return;
-    }
-
-    setStatusDialogOpen(false);
-
-    setSelectedAssignment(null);
-  };
-
-  const handleStatusSuccess = async (status: TaskStatus) => {
-    if (!selectedAssignment) {
-      return;
-    }
-
-    try {
-      setUpdatingStatus(true);
-
-      await updateTaskStatus(selectedAssignment.assignmentId, {
-        taskStatus: status,
-      });
-
-      toast.success("Task status updated successfully");
-
-      setStatusDialogOpen(false);
-
-      setSelectedAssignment(null);
-
-      await loadAssignments();
-    } catch (error: any) {
-      console.error("Failed to update task status:", error);
-
-      toast.error(
-        error?.response?.data?.message ||
-          "Unable to update task status. Please try again.",
-      );
-    } finally {
-      setUpdatingStatus(false);
-    }
-  };
+ 
 
   return (
     <Box
@@ -390,13 +341,7 @@ const TaskAssignments = () => {
         />
       </FormDialog>
 
-      <UpdateTaskStatusDialog
-        open={statusDialogOpen}
-        assignment={selectedAssignment}
-        loading={updatingStatus}
-        onClose={handleCloseStatusDialog}
-        onSuccess={handleStatusSuccess}
-      />
+    
       <ConfirmDialog
         open={deleteDialogOpen}
         title="Delete Task Assignment"

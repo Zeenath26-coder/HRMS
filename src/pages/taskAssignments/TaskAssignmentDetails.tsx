@@ -45,7 +45,7 @@ const TaskAssignmentDetails = () => {
   const [assignment, setAssignment] = useState<TaskAssignment | null>(null);
 
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loadingProjects, setLoadingProjects] = useState(true);
+  
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -77,13 +77,10 @@ const TaskAssignmentDetails = () => {
 
   const loadProjects = useCallback(async () => {
     try {
-      setLoadingProjects(true);
       const data = await getProjects();
       setProjects(data);
     } catch (err) {
       console.error("Failed to load projects:", err);
-    } finally {
-      setLoadingProjects(false);
     }
   }, []);
 

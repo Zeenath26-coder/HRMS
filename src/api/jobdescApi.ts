@@ -1,7 +1,7 @@
 import api from "./axios";
 import type { Job } from "../types/jobdesc";
 import type { ApiResponse, PageResponse } from "../types/common";
-import type { DepartmentRequest } from "./departmentApi";
+
 
 export interface JobRequest {
   jobTitle: string;
@@ -41,7 +41,7 @@ export const patchJob = async (
   id: number,
   data: Partial<JobRequest>,
 ): Promise<Job> => {
-  const response = await api.patch<ApiResponse<Job>>(`/jobs/${id}`);
+  const response = await api.patch<ApiResponse<Job>>(`/jobs/${id}`,data);
   return response.data.data;
 };
 

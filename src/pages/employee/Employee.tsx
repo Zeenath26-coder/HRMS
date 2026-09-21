@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, MenuItem, TextField } from "@mui/material";
+import { Box} from "@mui/material";
 import { Add01Icon } from "@hugeicons/core-free-icons";
 import { toast } from "sonner";
 import { searchEmployees, deleteEmployee } from "../../api/employeeApi";
@@ -27,12 +27,6 @@ import { PERMISSIONS, hasPermission } from "../../utils/permissions";
 
 const PAGE_SIZE = 10;
 
-const STATUS_OPTIONS: EmployeeStatus[] = [
-  "ACTIVE",
-  "RESIGNED",
-  "TERMINATED",
-  "RETIRED",
-];
 
 const Employees = () => {
   const { user } = useAuth();

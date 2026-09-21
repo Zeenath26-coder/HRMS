@@ -7,23 +7,22 @@ import {
   ClickAwayListener,
   Divider,
   IconButton,
-  InputAdornment,
-  MenuItem,
+  
   Paper,
-  TextField,
+  
   Tooltip,
   Typography,
 } from "@mui/material";
 
 import {
-  SearchRounded,
+
   NotificationsNoneRounded,
   KeyboardArrowDownRounded,
   PersonOutlineRounded,
-  SettingsOutlined,
+ 
   LogoutRounded,
   TaskAltRounded,
-  CloseRounded,
+ 
   MenuRounded,
 } from "@mui/icons-material";
 
@@ -43,7 +42,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 
   const { user, logOut } = useAuth();
 
-  const [search, setSearch] = useState("");
+  
   const [notificationOpen, setNotificationOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -52,10 +51,6 @@ const Header = ({ onMenuClick }: HeaderProps) => {
     setProfileOpen(false);
   };
 
-  const handleProfileToggle = () => {
-    setProfileOpen((previous) => !previous);
-    setNotificationOpen(false);
-  };
 
   const handleLogout = async () => {
     try {

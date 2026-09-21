@@ -33,7 +33,7 @@ interface TaskTableProps {
   onDelete: (task: Task) => void;
 }
 
-const TaskTable = ({ tasks, onEdit, onDelete , onAssign ,onView}: TaskTableProps) => {
+const TaskTable = ({ tasks, onEdit, onDelete , onAssign }: TaskTableProps) => {
   const navigate = useNavigate();
 
   return (

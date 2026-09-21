@@ -10,7 +10,7 @@ import {
 
 import { HugeiconsIcon } from "@hugeicons/react";
 
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import {
@@ -23,7 +23,7 @@ import type { Department } from "../../types/department";
 import { createDepartment, updateDepartment } from "../../api/departmentApi";
 
 import {
-  formFieldSx,
+  
   primaryButtonSx,
   secondaryButtonSx,
 } from "../common/formStyles";
@@ -53,7 +53,7 @@ const DepartmentForm = ({
   department,
   managers,
   onSuccess,
-  onCancel,
+ 
 }: DepartmentFormProps) => {
   const isEditMode = !!department;
 

@@ -15,7 +15,7 @@ import {
   ArrowLeft01Icon,
   Edit02Icon,
   Briefcase01Icon,
-  Money03Icon,
+
   UserIcon,
 } from "@hugeicons/core-free-icons";
 
@@ -39,7 +39,7 @@ import AddProjectEmployeeDialog from "../../components/projects/AddProjectEmploy
 import { primaryButtonSx } from "../../components/common/formStyles";
 import { useAuth } from "../../context/AuthContext";
 import { hasPermission, PERMISSIONS } from "../../utils/permissions";
-import { formatSalary } from "../../utils/formatters";
+
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();

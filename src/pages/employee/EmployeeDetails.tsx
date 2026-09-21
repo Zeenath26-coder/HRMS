@@ -30,8 +30,7 @@ import { getEmployeeById } from "../../api/employeeApi";
 import type { Employee } from "../../types/employee";
 
 import DetailsCard from "../../components/common/DetailsCard";
-import { UserAvatar } from "../../components/common/UserAvatar";
-import EmployeeStatusChip from "../../components/employees/EmployeeStatusChip";
+
 import { primaryButtonSx } from "../../components/common/formStyles";
 import EmployeeProfileHeader from "../../components/employees/EmployeeProfileHeader";
 

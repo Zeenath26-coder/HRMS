@@ -11,7 +11,7 @@ import {
   deleteUser,
   activateUser,
   deactivateUser,
-  resetUserPassword,
+ 
 } from "../../api/userApi";
 
 import type { PageResponse } from "../../types/common";

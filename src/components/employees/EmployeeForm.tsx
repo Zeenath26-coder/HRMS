@@ -146,15 +146,15 @@ const EmployeeForm = ({
       setSubmitting(true);
       setServerError("");
 
-      let savedEmployee: Employee;
+     
 
       if (isEditMode && employee) {
-        savedEmployee = await updateEmployee(employee.employeeId, {
+        await updateEmployee(employee.employeeId, {
           ...data,
           exitDate: data.exitDate || undefined,
         });
       } else {
-        savedEmployee = await createEmployee({
+        await createEmployee({
           ...data,
           exitDate: data.exitDate || undefined,
         });

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 import {
-  Edit02Icon,
+  
   Refresh01Icon,
   UserAdd01Icon,
 } from "@hugeicons/core-free-icons";
@@ -27,14 +27,12 @@ import {
   type CreateUserFormData,
 } from "../../validation/userValidation";
 
-import { updateUserSchema } from "../../validation/updateUservalidation";
-import { resetPasswordSchema } from "../../validation/resetPasswordvalidation";
 
 import type { User, UserRole } from "../../types/user";
 
 import type { Employee } from "../../types/employee";
 
-import { createUser, updateUser } from "../../api/userApi";
+import { createUser} from "../../api/userApi";
 
 import { getEmployeesWithoutAccount } from "../../api/employeeApi";
 
@@ -68,7 +66,7 @@ const ROLE_OPTIONS: {
   },
 ];
 
-const UserForm = ({ onSuccess, onCancel }: UserFormProps) => {
+const UserForm = ({ onSuccess}: UserFormProps) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loadingEmployees, setLoadingEmployees] = useState(true);
   const [submitting, setSubmitting] = useState(false);

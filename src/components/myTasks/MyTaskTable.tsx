@@ -14,7 +14,6 @@ import {
   ArrowDataTransferHorizontalIcon,
 } from "@hugeicons/core-free-icons";
 
-import { HugeiconsIcon } from "@hugeicons/react";
 
 import type { TaskAssignment } from "../../types/taskAssignment";
 
